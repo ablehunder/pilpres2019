@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
 <title>Pilpres 2019</title>
+<!--
 <link rel="stylesheet" href="pilpres2019.css">
+-->
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
 </head>
@@ -26,19 +28,18 @@ function processData(allText) {
 	var headers = allTextLines[0].split(',');
 	var lines = [];
 	for (var i=1; i<allTextLines.length; i++) {
-	var data = allTextLines[i].split(',');
-	if (data.length == headers.length) {
-		var tarr = [];
-		for (var j=0; j<headers.length; j++) {
-			tarr.push(headers[j]+":"+data[j]);
+		var data = allTextLines[i].split(',');
+		if (data.length == headers.length) {
+			var tarr = [];
+			for (var j=0; j<headers.length; j++) {
+				tarr.push(headers[j]+":"+data[j]);
+			}
+			lines.push(tarr);
 		}
-		lines.push(tarr);
 	}
 	console.log(lines);
+	// alert(lines);
 }
-
-// alert(lines);
-
 	
 	
 var ctx = document.getElementById('myChart').getContext('2d');
