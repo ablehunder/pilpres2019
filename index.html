@@ -13,14 +13,11 @@
 <script type="text/javascript" href="pilpres.js"></script>
 -->
 <canvas id="myChart" width="400" height="200"></canvas>
+<iframe id="myiframe" src="http://egovbench.addi.is.its.ac.id/pilpres.csv"></iframe>
 <script>
+	
 $(document).ready(function() {
-	$.ajax({
-		type: "GET",
-		url: "http://egovbench.addi.is.its.ac.id/pilpres.csv",
-		dataType: "text",
-		success: function(data) {processData(data);}
-	});
+	console.log($("#myiframe").contents());
 });
 
 function processData(allText) {
